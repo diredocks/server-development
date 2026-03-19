@@ -4,6 +4,8 @@ import com.stu.helloserver.entity.User;
 import com.stu.helloserver.common.Result;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -17,6 +19,11 @@ public class UserController {
     @PostMapping
     public Result<String> createUser(@RequestBody User user) {
         return Result.success("新增成功，接收到用户：" + user.getName() + "，年龄：" + user.getAge());
+    }
+
+    @PostMapping("/login")
+    public Result<Map<String, String>> login() {
+        return Result.success(Map.of("token", "mock-token"));
     }
 
     @PutMapping("/{id}")
