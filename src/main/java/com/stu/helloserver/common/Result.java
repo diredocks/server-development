@@ -13,18 +13,16 @@ public class Result<T> {
         this.data = data;
     }
 
-    // 成功响应
     public static <T> Result<T> success(T data) {
-        return new Result<>(200, "操作成功", data);
+        return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), data);
     }
 
     public static <T> Result<T> success() {
-        return new Result<>(200, "操作成功", null);
+        return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), null);
     }
 
-    // 错误响应
-    public static <T> Result<T> error(String msg) {
-        return new Result<>(500, msg, null);
+    public static <T> Result<T> error(ResultCode resultCode) {
+        return new Result<>(resultCode.getCode(), resultCode.getMsg(), null);
     }
 
     public static <T> Result<T> error(Integer code, String msg) {
