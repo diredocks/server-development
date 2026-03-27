@@ -1,27 +1,30 @@
 package com.stu.helloserver.entity;
 
-public class User {
-    private Long id;
-    private String name;
-    private Integer age;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
-    // 无参构造
+@TableName("sys_user")
+public class User {
+    @TableId(type = IdType.AUTO)
+    private Long id;
+    private String username;
+    private String password;
+
     public User() {}
 
-    // 全参构造
-    public User(Long id, String name, Integer age) {
+    public User(Long id, String username, String password) {
         this.id = id;
-        this.name = name;
-        this.age = age;
+        this.username = username;
+        this.password = password;
     }
 
-    // Getter & Setter
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 
-    public Integer getAge() { return age; }
-    public void setAge(Integer age) { this.age = age; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }
