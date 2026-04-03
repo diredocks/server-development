@@ -1,0 +1,95 @@
+{
+  "v": 8,
+  "id": "hello-server-collection",
+  "name": "Hello Server API Test Collection",
+  "folders": [],
+  "requests": [
+    {
+      "v": "13",
+      "name": "用户注册",
+      "method": "POST",
+      "endpoint": "<<baseUrl>>/api/users",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"username\": \"<<username>>\",\n  \"password\": \"<<password>>\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "用户登录",
+      "method": "POST",
+      "endpoint": "<<baseUrl>>/api/users/login",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"username\": \"<<username>>\",\n  \"password\": \"<<password>>\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "按 ID 查询用户",
+      "method": "GET",
+      "endpoint": "<<baseUrl>>/api/users/<<userId>>",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "<<authToken>>",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authType": "inherit",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_hello_server_api_tests"
+}
