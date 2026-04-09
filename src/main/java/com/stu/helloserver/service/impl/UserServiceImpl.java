@@ -1,6 +1,7 @@
 package com.stu.helloserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.stu.helloserver.common.Result;
 import com.stu.helloserver.common.ResultCode;
 import com.stu.helloserver.dto.UserDTO;
@@ -57,5 +58,12 @@ public class UserServiceImpl implements UserService {
         }
 
         return Result.success("id=" + dbUser.getId() + ", username=" + dbUser.getUsername());
+    }
+
+    @Override
+    public Result<Object> getUserPage(Integer pageNum, Integer pageSize) {
+        Page<User> pageParam = new Page<>(pageNum, pageSize);
+        Page<User> resultPage = userMapper.selectPage(pageParam, null);
+        return Result.success(resultPage);
     }
 }

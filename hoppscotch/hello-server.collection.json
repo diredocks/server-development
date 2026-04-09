@@ -84,6 +84,46 @@
       },
       "requestVariables": [],
       "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "分页查询用户",
+      "method": "GET",
+      "endpoint": "<<baseUrl>>/api/users/page",
+      "params": [
+        {
+          "key": "pageNum",
+          "value": "<<pageNum>>",
+          "active": true,
+          "description": ""
+        },
+        {
+          "key": "pageSize",
+          "value": "<<pageSize>>",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "<<authToken>>",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
     }
   ],
   "auth": {
