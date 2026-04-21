@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hello-server
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/lab_db
+    username: postgres
+    password: password
+  data:
+    redis:
+      host: 127.0.0.1
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
