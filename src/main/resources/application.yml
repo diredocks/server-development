@@ -10,8 +10,8 @@ spring:
     redis:
       host: 127.0.0.1
   ai:
-    dashscope:
-      api-key: ${AI_DASHSCOPE_API_KEY}
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
 
 mybatis-plus:
   configuration:
